@@ -42,8 +42,23 @@ const Editor = ({onChange, name, value}) => {
         data={JSON.parse(value)}
         onChange={onSave}
         tools={{
-          header: Header,
-          quote: Quote,
+          header: {
+            class: Header,
+            inlineToolbar: ['link'],
+            config: {
+              placeholder: 'Header'
+            },
+            shortcut: 'CMD+SHIFT+H'
+          },
+          quote: {
+            class: Quote,
+            inlineToolbar: true,
+            config: {
+              quotePlaceholder: 'Enter a quote',
+              captionPlaceholder: 'Quote\'s author',
+            },
+            shortcut: 'CMD+SHIFT+O'
+          },
           embed: {
             class: Embed,
             config: {
@@ -52,13 +67,30 @@ const Editor = ({onChange, name, value}) => {
               }
             }
           },
-          paragraph: Paragraph,
+          paragraph: {
+            class: Paragraph,
+            inlineToolbar: true
+          },
           link: Link,
-          marker: Marker,
-          table: Table,
-          list: List,
+          marker: {
+            class:  Marker,
+            shortcut: 'CMD+SHIFT+M'
+          },
+          table: {
+            class: Table,
+            inlineToolbar: true,
+            shortcut: 'CMD+ALT+T'
+          },
+          list: {
+            class: List,
+            inlineToolbar: true,
+            shortcut: 'CMD+SHIFT+L'
+          },
           delimiter: Delimiter,
-          checklist: Checklist,
+          checklist: {
+            class: Checklist,
+            inlineToolbar: true,
+          }
         }}
         editorInstance={editorInstance => {
           editor = editorInstance
