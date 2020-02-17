@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Editor = ({value, onChange}) => {
+const Editor = ({onChange, name, value}) => {
   var editor = null;
 
   const onSave = async () => {
@@ -24,7 +24,6 @@ const Editor = ({value, onChange}) => {
       const outputData = await editor.save();
       const dataString = JSON.stringify(outputData);
       onChange({ target: { name, value: dataString } });
-      console.log('Article data: ', dataString);
     } catch (e) {
       console.log('Saving failed: ', e);
     }
