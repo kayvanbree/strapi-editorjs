@@ -6,6 +6,13 @@ import EditorJs from '@natterstefan/react-editor-js'
 import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
 import Embed from '@editorjs/embed';
+import Marker from '@editorjs/marker';
+import Link from '@editorjs/link';
+import Delimiter from '@editorjs/delimiter';
+import Table from '@editorjs/table';
+import List from '@editorjs/list';
+import Checklist from '@editorjs/checklist';
+import Paragraph from '@editorjs/paragraph';
 
 const Wrapper = styled.div`
   .editorjs__main {
@@ -38,6 +45,13 @@ const Editor = ({onChange, name, value}) => {
           header: Header,
           quote: Quote,
           embed: Embed,
+          paragraph: Paragraph,
+          link: Link,
+          marker: Marker,
+          table: Table,
+          list: List,
+          delimiter: Delimiter,
+          checklist: Checklist,
         }}
         editorInstance={editorInstance => {
           editor = editorInstance
