@@ -35,3 +35,5 @@ Clone this repo into your extensions folder.
 ### Build?
 
 Then build it I guess? Not sure on that part yet. Good luck.
+
+(I used `strapi develop --watch-admin` up until now)
