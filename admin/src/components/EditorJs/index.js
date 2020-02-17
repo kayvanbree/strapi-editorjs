@@ -31,6 +31,7 @@ const Editor = ({onChange, name, value}) => {
       const outputData = await editor.save();
       const dataString = JSON.stringify(outputData);
       onChange({ target: { name, value: dataString } });
+      console.log('Saving data: ' + dataString);
     } catch (e) {
       console.log('Saving failed: ', e);
     }
@@ -42,22 +43,10 @@ const Editor = ({onChange, name, value}) => {
         data={JSON.parse(value)}
         onChange={onSave}
         tools={{
-          header: {
-            class: Header,
-            inlineToolbar: ['link'],
-            config: {
-              placeholder: 'Header'
-            },
-            shortcut: 'CMD+SHIFT+H'
-          },
+          header: Header,
           quote: {
             class: Quote,
             inlineToolbar: true,
-            config: {
-              quotePlaceholder: 'Enter a quote',
-              captionPlaceholder: 'Quote\'s author',
-            },
-            shortcut: 'CMD+SHIFT+O'
           },
           embed: {
             class: Embed,
@@ -72,25 +61,20 @@ const Editor = ({onChange, name, value}) => {
             inlineToolbar: true
           },
           link: Link,
-          marker: {
-            class:  Marker,
-            shortcut: 'CMD+SHIFT+M'
-          },
+          marker: Marker,
           table: {
             class: Table,
             inlineToolbar: true,
-            shortcut: 'CMD+ALT+T'
           },
           list: {
             class: List,
             inlineToolbar: true,
-            shortcut: 'CMD+SHIFT+L'
           },
           delimiter: Delimiter,
           checklist: {
             class: Checklist,
             inlineToolbar: true,
-          }
+          },
         }}
         editorInstance={editorInstance => {
           editor = editorInstance
