@@ -44,7 +44,14 @@ const Editor = ({onChange, name, value}) => {
         tools={{
           header: Header,
           quote: Quote,
-          embed: Embed,
+          embed: {
+            class: Embed,
+            config: {
+              services: {
+                youtube: true
+              }
+            }
+          },
           paragraph: Paragraph,
           link: Link,
           marker: Marker,
