@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-import EditorJs from '@natterstefan/react-editor-js'
+import ImageTool from '@editorjs/image';
+import { auth, request } from 'strapi-helper-plugin';
+import EditorJs from '@natterstefan/react-editor-js';
 import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
 import Embed from '@editorjs/embed';
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Editor = ({onChange, name, value}) => {
+const Editor = ({ onChange, name, value }) => {
   var editor = null;
 
   const onSave = async () => {
@@ -52,13 +53,13 @@ const Editor = ({onChange, name, value}) => {
             class: Embed,
             config: {
               services: {
-                youtube: true
-              }
-            }
+                youtube: true,
+              },
+            },
           },
           paragraph: {
             class: Paragraph,
-            inlineToolbar: true
+            inlineToolbar: true,
           },
           link: Link,
           marker: Marker,
@@ -75,9 +76,43 @@ const Editor = ({onChange, name, value}) => {
             class: Checklist,
             inlineToolbar: true,
           },
+          image: {
+            class: ImageTool,
+            config: {
+              endpoints: {
+                byFile: `${strapi.backendURL}/upload`, // Your backend file uploader endpoint
+                byUrl: `${strapi.backendURL}/upload`, // Your endpoint that provides uploading by Url
+              },
+              additionalRequestHeaders: {
+                authorization: `Bearer ${auth.getToken()}`,
+              },
+              uploader: {
+                /**
+                 * Upload file to the server and return an uploaded image data
+                 * @param {File} file - file selected from the device or pasted by drag-n-drop
+                 * @return {Promise.<{success, file: {url}}>}
+                 */
+                uploadByFile(file) {
+                  // your own uploading logic here
+                  const formData = new FormData();
+                  formData.append('files', file);
+                  const headers = {};
+
+                  return request('/upload', { method: 'POST', headers, body: formData }, false, false).then(resp => {
+                    return {
+                      success: 1,
+                      file: {
+                        url: `${strapi.backendURL}/${resp[0].url}`,
+                      },
+                    };
+                  });
+                },
+              },
+            },
+          },
         }}
         editorInstance={editorInstance => {
-          editor = editorInstance
+          editor = editorInstance;
         }}
       />
     </Wrapper>
