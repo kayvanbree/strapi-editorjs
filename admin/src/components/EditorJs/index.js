@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ImageTool from '@editorjs/image';
-import { auth, request } from 'strapi-helper-plugin';
+import { request } from 'strapi-helper-plugin';
 import EditorJs from '@natterstefan/react-editor-js';
 import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
@@ -14,7 +14,6 @@ import Table from '@editorjs/table';
 import List from '@editorjs/list';
 import Checklist from '@editorjs/checklist';
 import Paragraph from '@editorjs/paragraph';
-
 const Wrapper = styled.div`
   .editorjs__main {
     min-height: 200px;
@@ -23,10 +22,8 @@ const Wrapper = styled.div`
     }
   }
 `;
-
 const Editor = ({ onChange, name, value }) => {
   var editor = null;
-
   const onSave = async () => {
     try {
       const outputData = await editor.save();
@@ -37,7 +34,6 @@ const Editor = ({ onChange, name, value }) => {
       console.log('Saving failed: ', e);
     }
   };
-
   return (
     <Wrapper>
       <EditorJs
@@ -61,12 +57,12 @@ const Editor = ({ onChange, name, value }) => {
             class: Paragraph,
             inlineToolbar: true,
           },
-          link: Link,
-          marker: Marker,
-          table: {
-            class: Table,
-            inlineToolbar: true,
-          },
+          // link: Link,
+          // marker: Marker,
+          // table: {
+          //   class: Table,
+          //   inlineToolbar: true,
+          // },
           list: {
             class: List,
             inlineToolbar: true,
@@ -83,9 +79,6 @@ const Editor = ({ onChange, name, value }) => {
                 byFile: `${strapi.backendURL}/upload`, // Your backend file uploader endpoint
                 byUrl: `${strapi.backendURL}/upload`, // Your endpoint that provides uploading by Url
               },
-              additionalRequestHeaders: {
-                authorization: `Bearer ${auth.getToken()}`,
-              },
               uploader: {
                 /**
                  * Upload file to the server and return an uploaded image data
@@ -97,12 +90,11 @@ const Editor = ({ onChange, name, value }) => {
                   const formData = new FormData();
                   formData.append('files', file);
                   const headers = {};
-
                   return request('/upload', { method: 'POST', headers, body: formData }, false, false).then(resp => {
                     return {
                       success: 1,
                       file: {
-                        url: `${strapi.backendURL}/${resp[0].url}`,
+                        url: `${strapi.backendURL}${resp[0].url}`,
                       },
                     };
                   });
@@ -118,11 +110,9 @@ const Editor = ({ onChange, name, value }) => {
     </Wrapper>
   );
 };
-
 Editor.propTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };
-
 export default Editor;
