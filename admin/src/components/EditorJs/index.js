@@ -95,7 +95,7 @@ const Editor = ({ onChange, name, value }) => {
                     return {
                       success: 1,
                       file: {
-                        url: `${strapi.backendURL}/${resp[0].url}`,
+                        url: `${strapi.backendURL}${resp[0].url}`,
                       },
                     };
                   });
