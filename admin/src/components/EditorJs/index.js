@@ -12,7 +12,6 @@ import Delimiter from '@editorjs/delimiter';
 import Table from '@editorjs/table';
 import List from '@editorjs/list';
 import Checklist from '@editorjs/checklist';
-import Paragraph from '@editorjs/paragraph';
 
 const Wrapper = styled.div`
   .editorjs__main {
@@ -43,6 +42,12 @@ const Editor = ({ onChange, name, value }) => {
         data={JSON.parse(value)}
         onChange={onSave}
         tools={{
+          header: {
+            class: Header,
+            config: {
+              defaultLevel: 1
+            }
+          },
           quote: {
             class: Quote,
             inlineToolbar: true,
