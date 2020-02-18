@@ -1,6 +1,6 @@
 # strapi-editorjs
 
-This is a prototype to get strapi to replace the Wysiwyg editor with EditorJs. Not sure 
+This is a prototype to get strapi to replace the Wysiwyg editor with EditorJs. Not sure
 if I'm gonna use strapi, but I'm putting the code for this out in the world anyway. Have fun!
 
 Note: Opening existing posts won't work, because EditorJs can't handle the markdown language
@@ -20,6 +20,7 @@ To install this, add the following dependencies to your strapi project:
     "@editorjs/editorjs": "^2.16.1",
     "@editorjs/embed": "^2.2.1",
     "@editorjs/header": "^2.4.0",
+    "@editorjs/image": "^2.3.3",
     "@editorjs/link": "^2.1.3",
     "@editorjs/list": "^1.4.0",
     "@editorjs/marker": "^1.2.2",
