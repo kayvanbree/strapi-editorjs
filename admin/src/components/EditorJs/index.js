@@ -58,11 +58,11 @@ const Editor = ({ onChange, name, value }) => {
             inlineToolbar: true,
           },
           // link: Link,
-          // marker: Marker,
-          // table: {
-          //   class: Table,
-          //   inlineToolbar: true,
-          // },
+          marker: Marker,
+          table: {
+            class: Table,
+            inlineToolbar: true,
+          },
           list: {
             class: List,
             inlineToolbar: true,
