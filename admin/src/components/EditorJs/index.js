@@ -8,7 +8,6 @@ import Header from '@editorjs/header';
 import Quote from '@editorjs/quote';
 import Embed from '@editorjs/embed';
 import Marker from '@editorjs/marker';
-import Link from '@editorjs/link';
 import Delimiter from '@editorjs/delimiter';
 import Table from '@editorjs/table';
 import List from '@editorjs/list';
@@ -44,7 +43,6 @@ const Editor = ({ onChange, name, value }) => {
         data={JSON.parse(value)}
         onChange={onSave}
         tools={{
-          header: Header,
           quote: {
             class: Quote,
             inlineToolbar: true,
@@ -57,11 +55,6 @@ const Editor = ({ onChange, name, value }) => {
               },
             },
           },
-          paragraph: {
-            class: Paragraph,
-            inlineToolbar: true,
-          },
-          link: Link,
           marker: Marker,
           table: {
             class: Table,
