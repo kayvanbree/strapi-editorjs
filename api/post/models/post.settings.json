@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "posts"
+}

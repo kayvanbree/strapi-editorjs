@@ -5,12 +5,28 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
+    "develop-admin": "strapi develop --watch-admin",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@deboxsoft/cpx": "^1.5.0"
+  },
   "dependencies": {
+    "@editorjs/checklist": "^1.1.0",
+    "@editorjs/delimiter": "^1.1.0",
+    "@editorjs/editorjs": "^2.16.1",
+    "@editorjs/embed": "^2.2.1",
+    "@editorjs/header": "^2.4.0",
+    "@editorjs/image": "^2.3.3",
+    "@editorjs/link": "^2.1.3",
+    "@editorjs/list": "^1.4.0",
+    "@editorjs/marker": "^1.2.2",
+    "@editorjs/paragraph": "^2.6.1",
+    "@editorjs/quote": "^2.3.0",
+    "@editorjs/table": "^1.2.1",
+    "@natterstefan/react-editor-js": "^0.3.1",
     "strapi": "3.0.0-beta.18.7",
     "strapi-admin": "3.0.0-beta.18.7",
     "strapi-utils": "3.0.0-beta.18.7",
