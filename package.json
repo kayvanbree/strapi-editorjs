@@ -1,7 +1,7 @@
 {
-  "name": "strapi-editorjs",
-  "version": "0.0.1-alpha.1",
-  "description": "A Strapi application",
+  "name": "strapi-editorjs-demo",
+  "version": "0.0.1",
+  "description": "Development project for strapi-plugin-editorjs",
   "scripts": {
     "develop": "strapi develop",
     "develop-admin": "strapi develop --watch-admin",
