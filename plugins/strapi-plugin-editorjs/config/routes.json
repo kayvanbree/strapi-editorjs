@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "StrapiPluginEditorjs2.index",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

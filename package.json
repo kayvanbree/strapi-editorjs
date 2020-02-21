@@ -8,7 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "publish": "npm publish plugins/strapi-editorjs"
+    "publish": "npm publish plugins/strapi-plugin-editorjs"
   },
   "devDependencies": {
     "@deboxsoft/cpx": "^1.5.0"
