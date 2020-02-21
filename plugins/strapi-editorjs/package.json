@@ -1,6 +1,6 @@
 {
-  "name": "strapi-editorjs",
-  "version": "0.0.1",
+  "name": "strapi-plugin-editorjs",
+  "version": "0.0.1-alpha.1",
   "description": "A plugin for strapi that swaps the default Wysiwyg for EditorJs",
   "strapi": {
     "name": "strapi-editorjs",

@@ -8,36 +8,9 @@ normally used by strapi.
 
 ## Installation
 
-### Install dependencies
+1. Install cpx: `@deboxsoft/cpx`
+1. Add the script `"postinstall": "cpx node_modules/stapi-editorjs extensions"`
+1. Install stapi-editorjs: `npm install --save strapi-editorjs`.
 
-To install this, add the following dependencies to your strapi project:
-
-```json
-{
-  "dependencies": {
-    "@editorjs/checklist": "^1.1.0",
-    "@editorjs/delimiter": "^1.1.0",
-    "@editorjs/editorjs": "^2.16.1",
-    "@editorjs/embed": "^2.2.1",
-    "@editorjs/header": "^2.4.0",
-    "@editorjs/image": "^2.3.3",
-    "@editorjs/link": "^2.1.3",
-    "@editorjs/list": "^1.4.0",
-    "@editorjs/marker": "^1.2.2",
-    "@editorjs/paragraph": "^2.6.1",
-    "@editorjs/quote": "^2.3.0",
-    "@editorjs/table": "^1.2.1",
-    "@natterstefan/react-editor-js": "^0.3.1"
-  }
-}
-```
-
-### Clone this repo
-
-Clone this repo into your extensions folder.
-
-### Build?
-
-Then build it I guess? Not sure on that part yet. Good luck.
-
-(I used `strapi develop --watch-admin` up until now)
+The post install script will copy stapi-editorjs to your extensions folder. This way we can 
+override content from a plugin (stapi-plugin-content-manager).

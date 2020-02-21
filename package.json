@@ -1,14 +1,14 @@
 {
   "name": "strapi-editorjs",
-  "private": true,
-  "version": "0.1.0",
+  "version": "0.0.1-alpha.1",
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
     "develop-admin": "strapi develop --watch-admin",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "publish": "npm publish plugins/strapi-editorjs"
   },
   "devDependencies": {
     "@deboxsoft/cpx": "^1.5.0"
