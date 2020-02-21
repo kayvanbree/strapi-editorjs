@@ -3,7 +3,7 @@
 /**
  * StrapiPluginEditorjs2.js controller
  *
- * @description: A set of functions called "actions" of the `strapi-plugin-editorjs2` plugin.
+ * @description: A set of functions called "actions" of the `strapi-plugin-editorjs` plugin.
  */
 
 module.exports = {

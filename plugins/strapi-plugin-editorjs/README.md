@@ -9,7 +9,7 @@ normally used by strapi.
 ## Installation
 
 1. Install cpx: `@deboxsoft/cpx`
-1. Add the script `"postinstall": "cpx node_modules/strapi-plugin-editorjs/admin/src/components/**/* extensions/strapi-plugin-editorjs/admin/src/components"`
+1. Add the script `"postinstall": "cpx node_modules/strapi-plugin-editorjs/admin/src/components/**/* extensions/content-manager/admin/src/components"`
 1. Install stapi-editorjs: `npm install --save strapi-plugin-editorjs`.
 
 The post install script will copy stapi-editorjs to your extensions folder. This way we can 
